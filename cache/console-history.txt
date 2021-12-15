@@ -1,0 +1,30 @@
+.exit
+vgk.balanceOf('0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266')
+VGK.balanceOf('0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266')
+      .catch(err => console.error(err))
+      })
+        console.log(ethers.utils.formatEther( res ))
+        console.log(res)
+      .then(res => {
+vgk.balanceOf('0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266')
+vgk
+const vgk = await VGK.attach('0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266')
+const vgk = await VGK.attach(“0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266”)
+VGK
+const VGK = await ethers.getContractFactory('VGK');
+const Box = await ethers.getContractFactory('Box');
+hardhat.ethers
+hardhat.ethers.accounts
+const hardhat = require("hardhat")
+hardconst hardhat = require("hardhat")
+hardhat.ethers
+accounts
+.exit
+.help
+.exit
+.help
+quit
+exit
+ethers.accounts
+eth.accounts
+accounts

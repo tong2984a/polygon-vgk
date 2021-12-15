@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Material Design for Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="stylesheets/mdb.min.css" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="stylesheets/admin.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+    crossorigin="anonymous"></script>
+  <!-- DataTable -->
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+  <link href="stylesheets/styles.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!--Main Navigation-->
+  <header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <a href="maker.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-chart-area fa-fw me-3"></i><span>Freemium</span>
+          </a>
+          <a href="adSettings.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-users fa-fw me-3"></i><span>Omakase</span>
+          </a>
+          <!--
+          <a href="consents.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-chart-pie fa-fw me-3"></i><span>Consents</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+            <i class="fas fa-chart-bar fa-fw me-3"></i><span>Preferences</span>
+          </a>
+          <a href="logbook.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Log book</span>
+          </a>
+          <a href="dsarAI.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-users fa-fw me-3"></i><span>DSAR AI</span>
+          </a>
+        -->
+        </div>
+        <!--
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <a href="https://tong2984a.github.io/loyalty-consumer/" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-globe fa-fw me-3"></i><span>User loyalty app</span>
+          </a>
+        </div>
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <a href="admin.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-money-bill fa-fw me-3"></i><span>Admin dashboard</span>
+          </a>
+          <a href="https://loving-knuth-e1160e.netlify.app/grocery-admin.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-money-bill fa-fw me-3"></i><span>Grocery Admin</span>
+          </a>
+        </div>
+      -->
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <a href="/" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-globe fa-fw me-3"></i><span>Tabehoudai, Mirai-e</span>
+          </a>
+        <!--
+        <a href="http://localhost:3000" class="list-group-item list-group-item-action py-2 ripple">
+              <i class="fas fa-globe fa-fw me-3"></i><span>Tabehoudai, Mirai-e</span>
+            </a>
+          -->
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.jpeg" height="55" alt="" loading="lazy" />
+        </a>
+        <!-- Search form -->
+        <form class="d-none d-md-flex input-group w-auto my-auto">
+          <input autocomplete="off" type="search" class="form-control rounded"
+            placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px" />
+          <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+        </form>
+
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <!-- Notification dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-bell"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Some news</a></li>
+              <li><a class="dropdown-item" href="#">Another news</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Icon -->
+          <li class="nav-item">
+            <a class="nav-link me-3 me-lg-0" href="#">
+              <i class="fas fa-fill-drip"></i>
+            </a>
+          </li>
+          <!-- Icon -->
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+
+          <!-- Icon dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown" role="button"
+              data-mdb-toggle="dropdown" aria-expanded="false">
+              <i class="united kingdom flag m-0"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="#"><i class="united kingdom flag"></i>English
+                  <i class="fa fa-check text-success ms-2"></i></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="poland flag"></i>Polski</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="china flag"></i>中文</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="japan flag"></i>日本語</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="germany flag"></i>Deutsch</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="spain flag"></i>Español</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="russia flag"></i>Русский</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="portugal flag"></i>Português</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Avatar -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+              id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="22"
+                alt="" loading="lazy" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">My profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
+      <!--Section: Table-->
+      <section class="mb-4">
+        <div class="container-fluid px-4">
+          <h1 class="mt-4">Preferences</h1>
+          <div class="card mb-4">
+            <div class="card-header">
+              <i class="fas fa-table me-1"></i>
+              Aggregate of Consents
+            </div>
+            <div class="card-body">
+              <table id="datatablesSimple">
+                <thead>
+                  <tr>
+                    <th>Contact</th>
+                    <th>Full Name</th>
+                    <th>Preferences</th>
+                    <th>Status</th>
+                    <th>Category</th>
+                    <th>Sensitivity</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Contact</th>
+                    <th>Full Name</th>
+                    <th>Preferences</th>
+                    <th>Status</th>
+                    <th>Category</th>
+                    <th>Sensitivity</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <td>Tiger@yahoo.com</td>
+                    <td>Tiger Nixon</td>
+                    <td>Salad, Burger</td>
+                    <td>Active</td>
+                    <td>B2B</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Garrett@yahoo.com</td>
+                    <td>Garrett Winters</td>
+                    <td>Vegetables</td>
+                    <td>Suppressed</td>
+                    <td></td>
+                    <td>Financial</td>
+                  </tr>
+                  <tr>
+                    <td>Ashton@yahoo.com</td>
+                    <td>Ashton Cox</td>
+                    <td>Plant-Based Meat</td>
+                    <td>Expired</td>
+                    <td>Legal Person</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Cedric@gmail.com</td>
+                    <td>Cedric Kelly</td>
+                    <td>Plant-Based Meat</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Biometric</td>
+                  </tr>
+                  <tr>
+                    <td>Airi@gmail.com</td>
+                    <td>Airi Satou</td>
+                    <td>Plant-Based Meat</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Brielle@outlook.com</td>
+                    <td>Brielle Williamson</td>
+                    <td>Seasonings, Sauce</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Herrod@outlook.com</td>
+                    <td>Herrod Chandler</td>
+                    <td>Plant-Based Egg</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Medical</td>
+                  </tr>
+                  <tr>
+                    <td>Rhona@hotmail.com</td>
+                    <td>Rhona Davidson</td>
+                    <td>Seasonings, Sauce</td>
+                    <td>Active</td>
+                    <td>B2B</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Colleen@outlook.com</td>
+                    <td>Colleen Hurst</td>
+                    <td>Snack</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Sonya@hotmail.com</td>
+                    <td>Sonya Frost</td>
+                    <td>Dessert</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Jena@gmail.com</td>
+                    <td>Jena Gaines</td>
+                    <td>Fruits</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Quinn@outlook.com</td>
+                    <td>Quinn Flynn</td>
+                    <td>Plant-Based Dairy</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Charde@yahoo.com</td>
+                    <td>Charde Marshall</td>
+                    <td>Plant-Based Dairy</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Haley@outlook.com</td>
+                    <td>Haley Kennedy</td>
+                    <td>Plant-Based Dairy</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Tatyana@hotmail.com</td>
+                    <td>Tatyana Fitzpatrick</td>
+                    <td>Plant-Based Dairy</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Michael@yahoo.com</td>
+                    <td>Michael Silva</td>
+                    <td>Farmer's Market</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Paul@gmail.com</td>
+                    <td>Paul Byrd</td>
+                    <td>Farmer's Market</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Gloria@gmail.com</td>
+                    <td>Gloria Little</td>
+                    <td>Farmer's Market</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Bradley@yahoo.com</td>
+                    <td>Bradley Greer</td>
+                    <td>Dessert</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Dai@gmail.com</td>
+                    <td>Dai Rios</td>
+                    <td>Farmer's Market</td>
+                    <td>Suppressed</td>
+                    <td></td>
+                    <td>Financial</td>
+                  </tr>
+                  <tr>
+                    <td>Jenette@yahoo.com</td>
+                    <td>Jenette Caldwell</td>
+                    <td>Farmer's Market</td>
+                    <td>Suppressed</td>
+                    <td>Legal Person</td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Yuri@hotmail.com</td>
+                    <td>Yuri Berry</td>
+                    <td>Farmer's Market</td>
+                    <td>Active</td>
+                    <td>B2B</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Caesar@outlook.com</td>
+                    <td>Caesar Vance</td>
+                    <td>Farmer's Market</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Doris@yahoo.com</td>
+                    <td>Doris Wilder</td>
+                    <td>Plant-Based Egg</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Angelica@hotmail.com</td>
+                    <td>Angelica Ramos</td>
+                    <td>Farmer's Market</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Gavin@yahoo.com</td>
+                    <td>Gavin Joyce</td>
+                    <td>Fruits</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Jennifer@yahoo.com</td>
+                    <td>Jennifer Chang</td>
+                    <td>Plant-Based Dairy</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Brenden@outlook.com</td>
+                    <td>Brenden Wagner</td>
+                    <td>Dessert</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Fiona@yahoo.com</td>
+                    <td>Fiona Green</td>
+                    <td>Fruits</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Shou@outlook.com</td>
+                    <td>Shou Itou</td>
+                    <td>Fruits</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Michelle@gmail.com</td>
+                    <td>Michelle House</td>
+                    <td>Seasonings, Sauce</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Suki@yahoo.com</td>
+                    <td>Suki Burks</td>
+                    <td>Fruits</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Prescott@yahoo.com</td>
+                    <td>Prescott Bartlett</td>
+                    <td>Snack</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Gavin@yahoo.com</td>
+                    <td>Gavin Cortez</td>
+                    <td>Snack</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Martena@gmail.com</td>
+                    <td>Martena Mccray</td>
+                    <td>Snack</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Unity@gmail.com</td>
+                    <td>Unity Butler</td>
+                    <td>Farmer's Market</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Howard@gmail.com</td>
+                    <td>Howard Hatfield</td>
+                    <td>Fruits</td>
+                    <td>Suppressed</td>
+                    <td></td>
+                    <td>Medical</td>
+                  </tr>
+                  <tr>
+                    <td>Hope@yahoo.com</td>
+                    <td>Hope Fuentes</td>
+                    <td>Snack</td>
+                    <td>Suppressed</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Vivian@yahoo.com</td>
+                    <td>Vivian Harrell</td>
+                    <td>Snack</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Biometric</td>
+                  </tr>
+                  <tr>
+                    <td>Timothy@gmail.com</td>
+                    <td>Timothy Mooney</td>
+                    <td>Fruits</td>
+                    <td>Active</td>
+                    <td>B2B</td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Jackson@yahoo.com</td>
+                    <td>Jackson Bradshaw</td>
+                    <td>Snack</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Financial</td>
+                  </tr>
+                  <tr>
+                    <td>Olivia@yahoo.com</td>
+                    <td>Olivia Liang</td>
+                    <td>Sauce</td>
+                    <td>Active</td>
+                    <td>Legal Person</td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Bruno@outlook.com</td>
+                    <td>Bruno Nash</td>
+                    <td>Dessert</td>
+                    <td>Suppressed</td>
+                    <td></td>
+                    <td>Biometric</td>
+                  </tr>
+                  <tr>
+                    <td>Sakura@yahoo.com</td>
+                    <td>Sakura Yamamoto</td>
+                    <td>Sauce</td>
+                    <td>Expired</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Thor@yahoo.com</td>
+                    <td>Thor Walton</td>
+                    <td>Fruits</td>
+                    <td>Expired</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Finn@outlook.com</td>
+                    <td>Finn Camacho</td>
+                    <td>Sauce</td>
+                    <td>Expired</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Serge@yahoo.com</td>
+                    <td>Serge Baldwin</td>
+                    <td>Sauce</td>
+                    <td>Expired</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Zenaida@outlook.com</td>
+                    <td>Zenaida Frank</td>
+                    <td>Dessert</td>
+                    <td>Expired</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Zorita@yahoo.com</td>
+                    <td>Zorita Serrano</td>
+                    <td>Dessert</td>
+                    <td>Expired</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Jennifer@hotmail.com</td>
+                    <td>Jennifer Acosta</td>
+                    <td>Sauce, Snack</td>
+                    <td>Expired</td>
+                    <td></td>
+                    <td>Medical</td>
+                  </tr>
+                  <tr>
+                    <td>Cara@hotmail.com</td>
+                    <td>Cara Stevens</td>
+                    <td>Plant-Based Egg</td>
+                    <td>Expired</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Hermione@yahoo.com</td>
+                    <td>Hermione Butler</td>
+                    <td>Plant-Based Dairy</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Lael@outlook.com</td>
+                    <td>Lael Greer</td>
+                    <td>Farmer's Market</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Jonas@yahoo.com</td>
+                    <td>Jonas Alexander</td>
+                    <td>Fruits</td>
+                    <td>Suppressed</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Shad@outlook.com</td>
+                    <td>Shad Decker</td>
+                    <td>Plant-Based Dairy</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Children</td>
+                  </tr>
+                  <tr>
+                    <td>Michael@outlook.com</td>
+                    <td>Michael Bruce</td>
+                    <td>Snack</td>
+                    <td>Active</td>
+                    <td></td>
+                    <td>Financial</td>
+                  </tr>
+                  <tr>
+                    <td>Donna@gmail.com</td>
+                    <td>Donna Snider</td>
+                    <td>Sauce</td>
+                    <td>Active</td>
+                    <td>B2B</td>
+                    <td>Children</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Section: Table-->
+    </div>
+  </main>
+  <!--Main layout-->
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript" src="js/admin.js"></script>
+  <!-- DataTable -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+  <script src="js/datatables-simple-demo.js"></script>
+</body>
+
+</html>

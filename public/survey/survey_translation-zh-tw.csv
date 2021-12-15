@@ -1,0 +1,51 @@
+description ↓ - language →,default,zh-tw
+survey.page1.description,You are in control of your AD,選擇你要看的純素廣告
+survey.page1.title,Pay-A-Vegan,
+survey.page1.question2.noneText,Do not send me anything,不要任何廣告
+survey.page1.question2.title,Notify me when the following arrives,請給我這類型的純素廣告
+survey.page1.question2.choices.item1,Restaurant Vegan Dish,餐廳 - 純素餐
+survey.page1.question2.choices.item2,Groceries Vegan Product,超市 - 純素產品
+survey.page1.question2.choices.item3,Fashion & Lifestyle Vegan Product,純素時裝及生活產品
+survey.page1.question3.title,Vegan Dishes,純素餐
+survey.page1.question3.choices.item1,Salad,沙律
+survey.page1.question3.choices.item2,Burger,漢堡包
+survey.page1.question3.choices.item3,Plant-Based Meat - beef/pork/chicken/seafood,植物性肉類 - 牛/豬/雞/海鮮
+survey.page1.question3.choices.item4,Dim Sum,點心
+survey.page1.question3.choices.item5,Noodles,麵類
+survey.page1.question3.choices.item6,Snack,零食
+survey.page1.question3.choices.item7,Dessert,甜品
+survey.page1.question3.choices.item8,Coffee & Drinks,咖啡及飲料
+survey.page1.question4.title,Vegan Product,純素產品
+survey.page1.question4.choices.item1,Plant-Based Meat - beef/pork/chicken/seafood,植物性肉類 - 牛/豬/雞/海鮮
+survey.page1.question4.choices.item2,Plant-Based Egg,植物性蛋
+survey.page1.question4.choices.item3,Plant-Based Dairy,植物性奶
+survey.page1.question4.choices.item4,Seasonings,調味料
+survey.page1.question4.choices.item5,Sauce,醬料
+survey.page1.question4.choices.item6,Snack,零食
+survey.page1.question4.choices.item7,Dessert,甜品
+survey.page1.question4.choices.item8,Drinks,飲品
+survey.page1.question4.choices.item9,item9,
+survey.page1.question4.choices.item10,item10,
+survey.page1.question5.title,Fashion & Lifestyle Vegan Product,純素時裝及生活產品
+survey.page1.question5.choices.item1,Clothes,衣服類
+survey.page1.question5.choices.item2,Bag,袋
+survey.page1.question5.choices.item3,Shoes,鞋
+survey.page1.question5.choices.item4,Body Care & Cosmetics,護膚及化妝
+survey.page1.question5.choices.item5,Hand-Made Jewelries,手工飾物
+survey.page1.question5.choices.item6,Zero-Waste Products,零廢概念產品
+survey.page1.question5.choices.item7,Recycled & Upcycled Products,環保概念產品
+survey.page1.question5.choices.item8,Recycled & Upcycled Services,環保概念服務
+survey.page1.question5.choices.item9,item9,
+survey.page2.question6.title,Seller Location - select more than 1,商店位置 - 可選多項
+survey.page2.question6.choices.item1,HK Island,香港島
+survey.page2.question6.choices.item2,Kowloon,九龍
+survey.page2.question6.choices.item3,New Territories,新界
+survey.page2.question6.choices.item4,Islands,離島
+survey.page2.question6.choices.item5,Online,網上商店
+survey.page2.question8.title,Notify me during - select more than 1,只在下列時間通知我 - 可選多項
+survey.page2.question8.Afternoon.title,Afternoon,
+survey.page2.question8.choices.Yes,Yes,
+survey.page2.question8.Evening.title,Evening,
+survey.page2.question8.Morning.title,Morning,
+survey.page2.question8.rows.Mon-Fri only,Mon-Fri only,
+survey.page2.question8.rows.Sat-Sun only,Sat-Sun only,

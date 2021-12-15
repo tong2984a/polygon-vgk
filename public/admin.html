@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Material Design for Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="stylesheets/mdb.min.css" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="stylesheets/admin.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+    crossorigin="anonymous"></script>
+  <!-- DataTable -->
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+  <link href="stylesheets/styles.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!--Main Navigation-->
+  <header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <a href="maker.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-chart-area fa-fw me-3"></i><span>Freemium</span>
+          </a>
+          <a href="adSettings.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-users fa-fw me-3"></i><span>Omakase</span>
+          </a>
+          <!--
+          <a href="consents.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-chart-pie fa-fw me-3"></i><span>Consents</span>
+          </a>
+          <a href="preferences.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-chart-bar fa-fw me-3"></i><span>Preferences</span>
+          </a>
+          <a href="logbook.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Log book</span>
+          </a>
+          <a href="dsarAI.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-users fa-fw me-3"></i><span>DSAR AI</span>
+          </a>
+        -->
+        </div>
+        <!--
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <a href="https://tong2984a.github.io/loyalty-consumer/" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-globe fa-fw me-3"></i><span>User loyalty app</span>
+          </a>
+        </div>
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+            <i class="fas fa-money-bill fa-fw me-3"></i><span>Admin dashboard</span>
+          </a>
+          <a href="https://loving-knuth-e1160e.netlify.app/grocery-admin.html" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-money-bill fa-fw me-3"></i><span>Grocery Admin</span>
+          </a>
+        </div>
+      -->
+        <div class="list-group list-group-flush mx-3 mt-4">
+
+          <a href="/" class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-globe fa-fw me-3"></i><span>Tabehoudai, Mirai-e</span>
+          </a>
+        <!--
+            <a href="http://localhost:3000" class="list-group-item list-group-item-action py-2 ripple">
+              <i class="fas fa-globe fa-fw me-3"></i><span>Tabehoudai, Mirai-e</span>
+            </a>
+            -->
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.jpeg" height="55" alt="" loading="lazy" />
+        </a>
+        <!-- Search form -->
+        <form class="d-none d-md-flex input-group w-auto my-auto">
+          <input autocomplete="off" type="search" class="form-control rounded"
+            placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px" />
+          <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+        </form>
+
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <!-- Notification dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-bell"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Some news</a></li>
+              <li><a class="dropdown-item" href="#">Another news</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Icon -->
+          <li class="nav-item">
+            <a class="nav-link me-3 me-lg-0" href="#">
+              <i class="fas fa-fill-drip"></i>
+            </a>
+          </li>
+          <!-- Icon -->
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+
+          <!-- Icon dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown" role="button"
+              data-mdb-toggle="dropdown" aria-expanded="false">
+              <i class="united kingdom flag m-0"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="#"><i class="united kingdom flag"></i>English
+                  <i class="fa fa-check text-success ms-2"></i></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="poland flag"></i>Polski</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="china flag"></i>中文</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="japan flag"></i>日本語</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="germany flag"></i>Deutsch</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="spain flag"></i>Español</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="russia flag"></i>Русский</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="portugal flag"></i>Português</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Avatar -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+              id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="22"
+                alt="" loading="lazy" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">My profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main style="margin-top: 58px">
+    <div class="container pt-4">
+      <!--Section: Table-->
+      <section class="mb-4">
+        <div class="container-fluid px-4">
+          <h1 class="mt-4">Makers</h1>
+          <div class="card mb-4">
+            <div class="card-header">
+              <i class="fas fa-table me-1"></i>
+              Cross Border Consents and Opt-Outs
+            </div>
+            <div class="card-body">
+              <table id="datatablesSimple">
+                <thead>
+                  <tr>
+                    <th>Maker</th>
+                    <th>Locations</th>
+                    <th>Consents</th>
+                    <th>Suppressions</th>
+                    <th>Preferences</th>
+                    <th>Subscription Plan</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Maker</th>
+                    <th>Locations</th>
+                    <th>Consents</th>
+                    <th>Suppressions</th>
+                    <th>Preferences</th>
+                    <th>Subscription Plan</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <td>So Market 素market 素食專賣店</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>661</td>
+                    <td>45</td>
+                    <td>Groceries</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Blossom Vegetarian</td>
+                    <td><i class="flag flag-china"></i></td>
+                    <td>163</td>
+                    <td>85</td>
+                    <td>Restaurants</td>
+                    <td>AD and Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>YATA 一田</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>567</td>
+                    <td>41</td>
+                    <td>Home Improvement Products</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Bodhi Restaurant</td>
+                    <td><i class="flag flag-australia"></i></td>
+                    <td>164</td>
+                    <td>85</td>
+                    <td>Restaurants</td>
+                    <td>AD and Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Happy Plantarian</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>987</td>
+                    <td>58</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>吉祥草</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>637</td>
+                    <td>4</td>
+                    <td>Groceries</td>
+                    <td>AD and Loyalty, Yearly</td>
+                  </tr>
+                  <tr>
+                    <td>Millennium</td>
+                    <td><i class="flag flag-us"></i></td>
+                    <td>262</td>
+                    <td>45</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>ONA</td>
+                    <td><i class="flag flag-france"></i></td>
+                    <td>587</td>
+                    <td>46</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Yearly</td>
+                  </tr>
+                  <tr>
+                    <td>一日三餐</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>240</td>
+                    <td>4</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Mother Chu's Vegetarian Kitchen</td>
+                    <td><i class="flag flag-australia"></i></td>
+                    <td>654</td>
+                    <td>82</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Candle 79</td>
+                    <td><i class="flag flag-us"></i></td>
+                    <td>667</td>
+                    <td>45</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>The Veggie Table</td>
+                    <td><i class="flag flag-china"></i></td>
+                    <td>167</td>
+                    <td>5</td>
+                    <td>Restaurants</td>
+                    <td>AD and Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>樂園素食</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>670</td>
+                    <td>4</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Market Place</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>723</td>
+                    <td>75</td>
+                    <td>Home Improvement Products</td>
+                    <td>AD and Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Mirror & Vegan Concept</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>918</td>
+                    <td>12</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Plant</td>
+                    <td><i class="flag flag-us"></i></td>
+                    <td>367</td>
+                    <td>45</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>阿彌陀佛素心園</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>232</td>
+                    <td>85</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Yearly</td>
+                  </tr>
+                  <tr>
+                    <td>CitiSuper</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>989</td>
+                    <td>40</td>
+                    <td>Groceries</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Great</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>878</td>
+                    <td>22</td>
+                    <td>Groceries</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Taste</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>672</td>
+                    <td>15</td>
+                    <td>Groceries</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>龍門樓</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>447</td>
+                    <td>41</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>NUTTEA 堅果奶茶</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>512</td>
+                    <td>48</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>天寶閣</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>723</td>
+                    <td>46</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>404 Plant</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>355</td>
+                    <td>76</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Sweetpea Cafe</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>377</td>
+                    <td>34</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Bow Coffee</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>576</td>
+                    <td>19</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Spice of Indian</td>
+                    <td><i class="flag flag-france"></i></td>
+                    <td>129</td>
+                    <td>7</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Market Place</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>239</td>
+                    <td>87</td>
+                    <td>Groceries</td>
+                    <td>AD and Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Numerous Cups</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>657</td>
+                    <td>7</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Yearly</td>
+                  </tr>
+                  <tr>
+                    <td>Bagels Alley</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>700</td>
+                    <td>5</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Aeon</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>989</td>
+                    <td>56</td>
+                    <td>Home Improvement Products</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Zero One Coffee & Roastery</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>577</td>
+                    <td>41</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Emerald</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>342</td>
+                    <td>22</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Hands-On Coffee</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>111</td>
+                    <td>77</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Pici</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>129</td>
+                    <td>18</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Gateway</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>377</td>
+                    <td>45</td>
+                    <td>Home Improvement Products</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>MeanWhile Coffee</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>235</td>
+                    <td>45</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Sogo FreshMart</td>
+                    <td><i class="flag flag-france"></i></td>
+                    <td>467</td>
+                    <td>7</td>
+                    <td>Kitchen Equipments</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>掌廚黃后</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>894</td>
+                    <td>66</td>
+                    <td>Restaurants</td>
+                    <td>AD and Loyalty, Yearly</td>
+                  </tr>
+                  <tr>
+                    <td>COFFEE BY ZION</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>336</td>
+                    <td>13</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>NOOD FOOD</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>777</td>
+                    <td>5</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>STONE COFFEE</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>203</td>
+                    <td>7</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Yearly</td>
+                  </tr>
+                  <tr>
+                    <td>Bad Hombres</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>230</td>
+                    <td>77</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Shift eatery</td>
+                    <td><i class="flag flag-france"></i></td>
+                    <td>534</td>
+                    <td>23</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>V Brand</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>874</td>
+                    <td>17</td>
+                    <td>Groceries</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>759阿信屋</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>777</td>
+                    <td>41</td>
+                    <td>Home Improvement Products</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Govindas Cinema and Restaurant</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>555</td>
+                    <td>89</td>
+                    <td>Restaurants</td>
+                    <td>AD and Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Poolside Cafe</td>
+                    <td><i class="flag flag-australia"></i></td>
+                    <td>567</td>
+                    <td>98</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Alibi Bar & Kitchen</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>120</td>
+                    <td>47</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Herb n Sprout co</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>686</td>
+                    <td>44</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Mon Chou Bondi</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>776</td>
+                    <td>23</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>The little kitchen</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>777</td>
+                    <td>56</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Yearly</td>
+                  </tr>
+                  <tr>
+                    <td>Veggie Labo</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>787</td>
+                    <td>59</td>
+                    <td>Kitchen Equipments</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Pilgrims Bronte</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>765</td>
+                    <td>28</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Mark & Spensor</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>872</td>
+                    <td>27</td>
+                    <td>Home Improvement Products</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>素得其樂</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>888</td>
+                    <td>45</td>
+                    <td>Groceries</td>
+                    <td>AD and Loyalty, Yearly</td>
+                  </tr>
+                  <tr>
+                    <td>Park N Shop 百佳</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>345</td>
+                    <td>45</td>
+                    <td>Home Improvement Products</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Cafe Rocca</td>
+                    <td><i class="flag flag-france"></i></td>
+                    <td>726</td>
+                    <td>17</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>RAW & WILD Market & Cafe</td>
+                    <td><i class="flag flag-france"></i></td>
+                    <td>687</td>
+                    <td>14</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>ThreeSixty</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>767</td>
+                    <td>15</td>
+                    <td>Groceries</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Ummarin Thai Restaurant</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>460</td>
+                    <td>2</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Chatkazz Harris park</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>517</td>
+                    <td>41</td>
+                    <td>Restaurants</td>
+                    <td>AD, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>The Coffee Academics</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>439</td>
+                    <td>21</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>GROTTO</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>348</td>
+                    <td>21</td>
+                    <td>Restaurants</td>
+                    <td>AD and Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>FARMER'S COOKING</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>349</td>
+                    <td>8</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Dandy's Organic Cafe</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>435</td>
+                    <td>77</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Yearly</td>
+                  </tr>
+                  <tr>
+                    <td>THE TEA ACADEMICS</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>211</td>
+                    <td>90</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>HKTV Mall</td>
+                    <td><i class="flag flag-france"></i></td>
+                    <td>868</td>
+                    <td>43</td>
+                    <td>Kitchen Equipments</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>點點綠</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>888</td>
+                    <td>2</td>
+                    <td>Groceries</td>
+                    <td>AD and Loyalty, Yearly</td>
+                  </tr>
+                  <tr>
+                    <td>Batata Greens Veggie Store 甘薯葉素食超市</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>229</td>
+                    <td>7</td>
+                    <td>Groceries</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>Passion</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>128</td>
+                    <td>39</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>SkyLikeFood 天喜素食超市</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>875</td>
+                    <td>19</td>
+                    <td>Groceries</td>
+                    <td>Loyalty, Monthly</td>
+                  </tr>
+                  <tr>
+                    <td>MUM Veggie Cafe</td>
+                    <td><i class="flag flag-hong-kong"></i></td>
+                    <td>763</td>
+                    <td>45</td>
+                    <td>Restaurants</td>
+                    <td>Loyalty, Yearly</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Section: Table-->
+    </div>
+  </main>
+  <!--Main layout-->
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript" src="js/admin.js"></script>
+  <!-- DataTable -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+  <script src="js/datatables-simple-demo.js"></script>
+</body>
+
+</html>

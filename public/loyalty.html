@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hello, Vegan!</title>
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <p class="text-center">
+      <a href="loyalty.html">
+        <img src="images/scott-webb-GQD3Av_9A88-unsplash.jpg" class="img-responsive" style="margin:0 auto;" alt="Responsive image">
+      </a>
+    </p>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-4">Register New Account</h1>
+        <p class="lead">Register a new account to start saving rewards.</p>
+        <div style="display: none;" id="alert-register-new-account" class="alert alert-success alert-dismissible fade show" role="alert">
+        </div>
+        <div style="display: none;" id="error-register-new-account" class="alert alert-danger alert-dismissible fade show" role="alert">
+        </div>
+        <div class="form-group">
+          <label for="alias1">Alias</label>
+          <input type="text" class="form-control" id="alias1" aria-describedby="aliasHelp" placeholder="Enter alias">
+          <small id="aliasHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+          <label for="balance1">Beginning Balance</label>
+          <input type="text" class="form-control" id="balance1" placeholder="Enter Beginning balance">
+        </div>
+        <div style="display: none;" id="spin-register-new-account" class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <button id="btn-register-new-account" type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
+    <div class="jumbotron bg-info text-white">
+      <div class="container">
+        <h1 class="display-4">Earn Points</h1>
+        <p class="lead">Add points to an account.</p>
+        <div style="display: none;" id="alert-earn" class="alert alert-success alert-dismissible fade show" role="alert">
+        </div>
+        <div style="display: none;" id="error-earn" class="alert alert-danger alert-dismissible fade show" role="alert">
+        </div>
+        <div class="form-group">
+          <label for="alias2">Alias</label>
+          <input type="text" class="form-control" id="alias2" aria-describedby="aliasHelp" placeholder="Enter alias">
+          <small id="aliasHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="amount2">Amount</label>
+            <input type="text" class="form-control" id="amount2" aria-describedby="amountHelp" placeholder="Enter amount">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="currencyCode2">Unit</label>
+            <select id="currencyCode2" class="form-control">
+              <option selected>BTC</option>
+              <option>HKD</option>
+            </select>
+          </div>
+        </div>
+        <div style="display: none;" id="spin-earn" class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <button id="btn-earn" type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-4">Redeem Points</h1>
+        <p class="lead">Redeem points of an account.</p>
+        <div style="display: none;" id="alert-redeem" class="alert alert-success alert-dismissible fade show" role="alert">
+        </div>
+        <div style="display: none;" id="error-redeem" class="alert alert-danger alert-dismissible fade show" role="alert">
+        </div>
+        <div class="form-group">
+          <label for="alias3">Alias</label>
+          <input type="text" class="form-control" id="alias3" aria-describedby="aliasHelp" placeholder="Enter alias">
+          <small id="aliasHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="amount3">Amount</label>
+            <input type="text" class="form-control" id="amount3" aria-describedby="amountHelp" placeholder="Enter amount">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="currencyCode3">Unit</label>
+            <select id="currencyCode3" class="form-control">
+              <option selected>BTC</option>
+              <option>HKD</option>
+            </select>
+          </div>
+        </div>
+        <div style="display: none;" id="spin-redeem" class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <button id="btn-redeem" type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
+    <div class="jumbotron bg-info text-white">
+      <div class="container">
+        <h1 class="display-4">Query Account</h1>
+        <p class="lead">Check account balance and status.</p>
+        <div style="display: none;" id="alert-query" class="alert alert-success alert-dismissible fade show" role="alert">
+        </div>
+        <div style="display: none;" id="error-query" class="alert alert-danger alert-dismissible fade show" role="alert">
+        </div>
+        <div class="form-group">
+          <label for="alias4">Alias</label>
+          <input type="text" class="form-control" id="alias4" aria-describedby="aliasHelp" placeholder="Enter alias">
+          <small id="aliasHelp" class="form-text text-muted"></small>
+        </div>
+        <div style="display: none;" id="spin-query" class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <button id="btn-query" type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-4">Query All Accounts</h1>
+        <p class="lead">Return a list of all accounts.</p>
+        <div style="display: none;" id="alert-query-all" class="alert alert-success alert-dismissible fade show" role="alert">
+        </div>
+        <div style="display: none;" id="error-query-all" class="alert alert-danger alert-dismissible fade show" role="alert">
+        </div>
+        <div style="display: none;" id="spin-query-all" class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <button id="btn-query-all" type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+  <script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBg34hCq_jGHdj-HNWi2ZjfqhM2YgWq4ek",
+    authDomain: "pay-a-vegan.firebaseapp.com",
+    databaseURL: "https://pay-a-vegan.firebaseio.com",
+    projectId: "pay-a-vegan",
+    storageBucket: "pay-a-vegan.appspot.com",
+    messagingSenderId: "587888386485",
+    appId: "1:587888386485:web:3a81137924d19cbe2439fc",
+    measurementId: "G-MGJK6GF9YW"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  const increment = firebase.firestore.FieldValue.increment(1);
+  const storageRef = firebase.storage().ref();
+  const storage = firebase.storage();
+  const idRef = db.collection('coupon').doc('counter');
+
+  const registerButton = document.getElementById('btn-register-new-account');
+  const registerAliasInput = document.getElementById('alias1');
+  const registerBalanceInput = document.getElementById('balance1');
+  registerButton.addEventListener('click', () => {
+    document.getElementById('alert-register-new-account').style.display = "none";
+    document.getElementById('error-register-new-account').style.display = "none";
+    document.getElementById('btn-register-new-account').style.display = "none";
+    document.getElementById('spin-register-new-account').style.display = "block";
+    var aliasValue = registerAliasInput.value.trim();
+    var balanceValue = registerBalanceInput.value || 10;
+    let account = {
+      alias: aliasValue,
+      address: "",
+      balance:  balanceValue
+    };
+    $.post('/users', account, function(data, status) {
+      var alertHtml = `Successfully created new account <strong>ID</strong>: ${data}.`
+      $('#alert-register-new-account').html(alertHtml);
+      document.getElementById('alert-register-new-account').style.display = "block";
+      document.getElementById('btn-register-new-account').style.display = "block";
+      document.getElementById('spin-register-new-account').style.display = "none";
+    })
+  });
+
+  const earnButton = document.getElementById('btn-earn');
+  const earnAliasInput = document.getElementById('alias2');
+  const earnAmountInput = document.getElementById('amount2');
+  const earnCurrencyCodeInput = document.getElementById('currencyCode2');
+  earnButton.addEventListener('click', () => {
+    document.getElementById('alert-earn').style.display = "none";
+    document.getElementById('error-earn').style.display = "none";
+    document.getElementById('btn-earn').style.display = "none";
+    document.getElementById('spin-earn').style.display = "block";
+    var aliasValue = earnAliasInput.value.trim();
+    var amountValue = earnAmountInput.value;
+    var currencyCodeValue = earnCurrencyCodeInput.value.trim();
+    var parseTwo = parseFloat(amountValue);
+    if (isNaN(parseTwo)) parseTwo = 0;
+    if (currencyCodeValue === "HKD") {
+      $.get(`https://blockchain.info/tobtc?currency=HKD&value=${parseTwo}`, function(data) {
+        var parseThree = parseFloat(data);
+        if (isNaN(parseThree)) parseThree = 0;
+        let earning = {
+          amount: parseThree,
+          currencyCode:  currencyCodeValue
+        };
+        $.post(`/earnings/${aliasValue}`, earning, function(data, status) {
+          var alertHtml = `Successfully added ${amountValue} HKD / ${parseThree} BTC.`
+          $('#alert-earn').html(alertHtml);
+          document.getElementById('alert-earn').style.display = "block";
+          document.getElementById('btn-earn').style.display = "block";
+          document.getElementById('spin-earn').style.display = "none";
+        })
+      })
+    } else {
+      let earning = {
+        amount: parseTwo,
+        currencyCode:  currencyCodeValue
+      };
+      $.post(`/earnings/${aliasValue}`, earning, function(data, status) {
+        var alertHtml = `Successfully added ${amountValue} ${currencyCodeValue}.`
+        $('#alert-earn').html(alertHtml);
+        document.getElementById('alert-earn').style.display = "block";
+        document.getElementById('btn-earn').style.display = "block";
+        document.getElementById('spin-earn').style.display = "none";
+      })
+    }
+  });
+
+  const redeemButton = document.getElementById('btn-redeem');
+  const redeemAliasInput = document.getElementById('alias3');
+  const redeemAmountInput = document.getElementById('amount3');
+  const redeemCurrencyCodeInput = document.getElementById('currencyCode3');
+  redeemButton.addEventListener('click', () => {
+    document.getElementById('alert-redeem').style.display = "none";
+    document.getElementById('error-redeem').style.display = "none";
+    document.getElementById('btn-redeem').style.display = "none";
+    document.getElementById('spin-redeem').style.display = "block";
+    var aliasValue = redeemAliasInput.value.trim();
+    var amountValue = redeemAmountInput.value;
+    var currencyCodeValue = redeemCurrencyCodeInput.value.trim();
+    var parseTwo = parseFloat(amountValue);
+    if (isNaN(parseTwo)) parseTwo = 0;
+    if (currencyCodeValue === "HKD") {
+      $.get(`https://blockchain.info/tobtc?currency=HKD&value=${parseTwo}`, function(data) {
+        var parseThree = parseFloat(data);
+        if (isNaN(parseThree)) parseThree = 0;
+        let earning = {
+          amount: parseThree,
+          currencyCode:  currencyCodeValue
+        };
+        $.post(`/redemptions/${aliasValue}`, earning, function(data, status) {
+          var alertHtml = `Successfully redeemed ${amountValue} HKD / ${parseThree} BTC.`
+          $('#alert-redeem').html(alertHtml);
+          document.getElementById('alert-redeem').style.display = "block";
+          document.getElementById('btn-redeem').style.display = "block";
+          document.getElementById('spin-redeem').style.display = "none";
+        })
+      })
+    } else {
+      let redemption = {
+        amount: parseTwo,
+        currencyCode:  currencyCodeValue
+      };
+      $.post(`/redemptions/${aliasValue}`, redemption, function(data, status) {
+        var alertHtml = `Successfully redeemed ${amountValue} ${currencyCodeValue}.`
+        $('#alert-redeem').html(alertHtml);
+        document.getElementById('alert-redeem').style.display = "block";
+        document.getElementById('btn-redeem').style.display = "block";
+        document.getElementById('spin-redeem').style.display = "none";
+      })
+    }
+  });
+
+  const queryButton = document.getElementById('btn-query');
+  const queryAliasInput = document.getElementById('alias4');
+  queryButton.addEventListener('click', () => {
+    document.getElementById('alert-query').style.display = "none";
+    document.getElementById('error-query').style.display = "none";
+    document.getElementById('btn-query').style.display = "none";
+    document.getElementById('spin-query').style.display = "block";
+    var aliasValue = queryAliasInput.value.trim();
+    $.get(`/users/${aliasValue}`, function(data) {
+      if (data.length > 0) {
+        var balance = data[0].balance;
+        $.post('https://cex.io/api/convert/BTC/USD', {"amnt":balance}, function(data, status) {
+          let amnt = (Math.round(data['amnt'] * 100) / 100).toFixed(2);
+          var alertHtml = `Successfully found account
+            <strong>ALIAS</strong>:${aliasValue}
+            <strong>BALANCE</strong>:BTC ${balance} / USD $${amnt}`;
+          $('#alert-query').html(alertHtml);
+          document.getElementById('alert-query').style.display = "block";
+          document.getElementById('btn-query').style.display = "block";
+          document.getElementById('spin-query').style.display = "none";
+        })
+      } else {
+        var alertHtml = `Unable to find account: ${aliasValue}`
+        $('#error-query').html(alertHtml);
+        document.getElementById('error-query').style.display = "block";
+        document.getElementById('btn-query').style.display = "block";
+        document.getElementById('spin-query').style.display = "none";
+      }
+    })
+  });
+
+  const queryAllButton = document.getElementById('btn-query-all');
+  queryAllButton.addEventListener('click', () => {
+    document.getElementById('alert-query-all').style.display = "none";
+    document.getElementById('error-query-all').style.display = "none";
+    document.getElementById('btn-query-all').style.display = "none";
+    document.getElementById('spin-query-all').style.display = "block";
+    $.get(`/users`, function(data) {
+      var accounts = [];
+      data.forEach((item, i) => {
+        var balance = item.balance;
+        var account = item.alias;
+        $.post('https://cex.io/api/convert/BTC/USD', {"amnt":balance}, function(data, status) {
+          let amnt = (Math.round(data['amnt'] * 100) / 100).toFixed(2);
+          accounts.push([`<tr>`, `<td>${account}</td>`, `<td>BTC ${balance} / USD $${amnt}</td>`, `</tr>`]);
+          var html = `
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">ALIAS</th>
+                  <th scope="col">BALANCE</th>
+                </tr>
+              </thead>
+              <tbody>`
+              + accounts.join()
+              + `</tbody>
+            </table>`;
+          $('#alert-query-all').html(html);
+          document.getElementById('alert-query-all').style.display = "block";
+          document.getElementById('btn-query-all').style.display = "block";
+          document.getElementById('spin-query-all').style.display = "none";
+        })
+      })
+    })
+  });
+  </script>
+
+  <script src="js/jquery-3.5.1.min.js"></script>
+</body>
+</html>

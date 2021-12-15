@@ -1,0 +1,8 @@
+{
+  "name": "Pay-A-Vegan",
+  "description": "Pay-A-Vegan is a vegan marketplace where you can buy, sell, and bid feature products.",
+  "image": "https://firebasestorage.googleapis.com/v0/b/pay-a-vegan.appspot.com/o/nft%2Fpay-a-vegan.jpeg?alt=media&token=d68c094d-6974-46ad-ae7e-e069d6b2b222",
+  "external_link": "https://www.pay-a-vegan.com",
+  "seller_fee_basis_points": 100,
+  "fee_recipient": "0x31b4cE41b12eBb0d1E7beEE20997069EBC20545D"
+}
